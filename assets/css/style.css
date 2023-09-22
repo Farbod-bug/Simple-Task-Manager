@@ -24,6 +24,13 @@ input {
   border: 1px solid #ccc;
 }
 
+.btn:hover {
+  cursor: pointer;
+  background-color: #bbbbbb;
+  transition: 0.25s all;
+}
+
+
 #trash {
   color: #0c7388;
   float: right;
@@ -298,3 +305,4 @@ input {
 .clear {
   clear: both;
 }
+
