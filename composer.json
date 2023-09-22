@@ -1,0 +1,16 @@
+{
+    "name": "m/silent-task",
+    "description": "A Simple Todo List Project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Farbod-bug",
+            "email": "farbodb8368@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hekmatinasser/verta": "^8.3"
+    }
+}
