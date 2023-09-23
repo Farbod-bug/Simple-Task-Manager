@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASE_PATH') OR die("Permision Denied");
 
 function isAjaxRequest(){
     if (!empty($_SERVER['HTTP_X_REQUEST_WITH']) && strtolower($_SERVER['HTTP_X_REQUEST_WITH']) == 'xmlhttprequest'){
@@ -16,4 +16,10 @@ function validate($data){
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+function dd($var){
+    echo "<pre style='color: #a06b00; background: #eee; z-index: 999; position: relative; padding: 10px; margin: 10px; border-radius: 5px; border-left: 3px solid #d79209; }'>";
+    var_dump($var);
+    echo "</pre>";
 }

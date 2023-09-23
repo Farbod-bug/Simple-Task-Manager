@@ -38,7 +38,12 @@ input {
 }
 
 #trash:hover {
- color: red;
+ color: rgb(202, 0, 0);
+ transition: 0.25s all;
+}
+
+span.created-at{
+  margin-right: 12px;
 }
 
 .page {
@@ -158,6 +163,10 @@ input {
   color: #0c7388;
 }
 
+.main .nav .menu ul li.active a{
+  color: #79BC46;
+}
+
 .main .nav .menu ul li{
   cursor: pointer;
   list-style: none;
@@ -201,7 +210,8 @@ input {
   font-weight: 400;
   padding: 0px;
   color: #AAA;
-  margin-top: -18px;
+  margin-top: -23px;
+  width: 40%;
 }
 .main .view .viewHeader .functions {
   float: right;

@@ -15,8 +15,23 @@ switch($_POST['action']){
             echo "The folder name must be longer than 3 characters";
             die();
         }
+        
+        echo addFolder($_POST['folderName']);
+    break;
 
-        addFolders($_POST['folderName']);
+    case "addTask":
+        $taskTitle = $_POST['taskTitle'];
+        $folderId = $_POST['folderId'] ;
+        if(($folderId) == 0){
+            echo "First, select a folder";
+            die();
+        }
+        if(!isset($taskTitle) || strlen($taskTitle) < 3){
+            echo "The Task Title must be longer than 3 characters";
+            die();
+        }
+        echo addTask($taskTitle, $folderId);
+
     break;
 
     default:
