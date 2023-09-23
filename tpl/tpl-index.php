@@ -11,7 +11,9 @@
 <div class="page">
   <div class="pageHeader">
     <div class="title">Dashboard</div>
-    <div class="userPanel"><i class="fa fa-chevron-down"></i><span class="username">Farbod Bagheri </span><img src="https://cdn.discordapp.com/attachments/788676053261746186/1153270240805933106/photo_2023-09-12_18-43-55.jpg" width="40" height="40"/></div>
+    <div class="userPanel">
+      <a style="color: black;" href="<?= site_url("?logout=1") ?>"><i class="fa-solid fa-right-from-bracket"></i></a>
+    <span class="username"><?= getLoggedInUser()->name ?? 'User' ?></span><img src="https://cdn.discordapp.com/attachments/788676053261746186/1155239442873860137/images.jpg" width="40" height="40"/></div>
   </div>
   <div class="main">
     <div class="nav">
