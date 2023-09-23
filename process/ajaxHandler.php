@@ -10,6 +10,15 @@ if(!isset($_POST['action']) || empty($_POST['action'])){
 }
 
 switch($_POST['action']){
+    case "doneSwitch":
+        $task_id = $_POST['taskId'];
+        if(!isset($task_id) || !is_numeric($task_id)){
+            echo "The Task id is invalid";
+            die();
+        }
+        echo doneSwitch($task_id);
+    break;
+
     case "addFolder":
         if(!isset($_POST['folderName']) || strlen($_POST['folderName']) < 3){
             echo "The folder name must be longer than 3 characters";

@@ -23,7 +23,7 @@
       <div class="menu">
         <div class="title">Folders</div>
         <ul class="folder_list">
-        <li class="<?= isset($_GET['folder_id']) ? '' : 'active' ?>"> <a href="/SilentTask"><i class="fa fa-folder"></i>All</li></a>
+        <li class="<?= isset($_GET['folder_id']) ? '' : 'active' ?>"> <a href="<?= site_url() ?>"><i class="fa fa-folder"></i>All</li></a>
           <?php foreach($folders as $folder):?>
             <li class="<?= isset($_GET['folder_id']) && $_GET['folder_id'] == $folder->id ? 'active' : '' ?>">
               <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
@@ -54,7 +54,7 @@
           <?php if(sizeof($tasks)):?>
           <?php foreach($tasks as $task):?>
             <li class="<?= $task->is_done ? 'checked' : '' ; ?>">
-            <i class="<?= $task->is_done ? 'fa-regular fa-square-check' : 'fa-regular fa-square' ; ?>"></i>
+            <i data-taskId="<?= $task->id?>" class="isDone clickable <?= $task->is_done ? 'fa-regular fa-square-check' : 'fa-regular fa-square' ; ?>"></i>
             <span><?= $task->title ?></span>
               <div class="info">
                 <span class="created-at">Created At: <?= $task->created_at ?></span>
@@ -111,9 +111,22 @@
                   alert(response);
                 }
             }
-          })
+          });
         }
       });
+  </script>
+  <script>
+    $('.isDone').click(function(e){
+      var tid = $(this).attr('data-taskId');
+          $.ajax({
+            url : "process/ajaxHandler.php",
+            method : "post",
+            data : {action: "doneSwitch",taskId: tid},
+            success : function(response){
+                location.reload();
+            }
+          })
+    });
   </script>
 
 </body>

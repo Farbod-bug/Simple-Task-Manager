@@ -42,6 +42,12 @@ input {
  transition: 0.25s all;
 }
 
+.clickable:hover{
+  cursor: pointer;
+  opacity: 70%;
+  transition: 0.25s all;
+}
+
 span.created-at{
   margin-right: 12px;
 }
@@ -184,7 +190,7 @@ span.created-at{
   color: #79BC46;
 }
 .main .nav .menu ul li:hover {
-  background-color: #999;
+  background-color: #c7c7c7;
 }
 .main .nav .menu ul li i{
   font-size: 1.4em;

@@ -11,6 +11,10 @@ function diePage($msg){
     die();
 }
 
+function site_url($uri = ''){
+    return BASE_URL . $uri;
+}
+
 function validate($data){
     $data = trim($data);
     $data = stripslashes($data);
